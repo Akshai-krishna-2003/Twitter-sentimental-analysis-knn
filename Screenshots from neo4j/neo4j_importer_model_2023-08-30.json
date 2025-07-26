@@ -1,0 +1,276 @@
+{
+  "version": "0.14.0",
+  "graph": {
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": -323,
+          "y": 187
+        },
+        "caption": "tweet_id"
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": -48,
+          "y": 187
+        },
+        "caption": "tweeted_text"
+      },
+      {
+        "id": "n2",
+        "position": {
+          "x": -48,
+          "y": 494.2217484008532
+        },
+        "caption": "selected"
+      },
+      {
+        "id": "n3",
+        "position": {
+          "x": -323,
+          "y": 494.2217484008532
+        },
+        "caption": "sentiment"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "Has_Twetted",
+        "fromId": "n0",
+        "toId": "n1"
+      },
+      {
+        "id": "n1",
+        "type": "certain_selected_words",
+        "fromId": "n1",
+        "toId": "n2"
+      },
+      {
+        "id": "n2",
+        "type": "tells_about_sentiment",
+        "fromId": "n2",
+        "toId": "n3"
+      }
+    ]
+  },
+  "dataModel": {
+    "configurations": {
+      "idsToIgnore": []
+    },
+    "fileModel": {
+      "fileSchemas": {
+        "dataset_analysis.csv": {
+          "expanded": true,
+          "fields": [
+            {
+              "name": "textID",
+              "type": "string",
+              "sample": "cb774db0d1",
+              "include": true
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "sample": " I`d have responded, if I were going",
+              "include": true
+            },
+            {
+              "name": "selected_text",
+              "type": "string",
+              "sample": "I`d have responded, if I were going",
+              "include": true
+            },
+            {
+              "name": "sentiment",
+              "type": "string",
+              "sample": "neutral",
+              "include": true
+            }
+          ]
+        }
+      }
+    },
+    "graphModel": {
+      "nodeSchemas": {
+        "n0": {
+          "label": "tweet_id",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "Property 1",
+              "type": "string",
+              "identifier": "LwnLQat1olxHQX_1-R8Se"
+            }
+          ],
+          "key": {
+            "properties": [
+              "LwnLQat1olxHQX_1-R8Se"
+            ]
+          }
+        },
+        "n1": {
+          "label": "tweeted_text",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "Property 1",
+              "type": "string",
+              "identifier": "QOlIo4H8DNkyehJrUfTo2"
+            }
+          ],
+          "key": {
+            "properties": [
+              "QOlIo4H8DNkyehJrUfTo2"
+            ]
+          }
+        },
+        "n2": {
+          "label": "selected",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "Property 1",
+              "type": "string",
+              "identifier": "HMnFNlAKjIjGr6IVMcKcF"
+            }
+          ],
+          "key": {
+            "properties": [
+              "HMnFNlAKjIjGr6IVMcKcF"
+            ]
+          }
+        },
+        "n3": {
+          "label": "sentiment",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "Property 1",
+              "type": "string",
+              "identifier": "wLhjS79Sb_iKDEc3Oqwix"
+            }
+          ],
+          "key": {
+            "properties": [
+              "wLhjS79Sb_iKDEc3Oqwix"
+            ]
+          }
+        }
+      },
+      "relationshipSchemas": {
+        "n0": {
+          "type": "Has_Twetted",
+          "sourceNodeSchema": "n0",
+          "targetNodeSchema": "n1",
+          "properties": []
+        },
+        "n1": {
+          "type": "certain_selected_words",
+          "sourceNodeSchema": "n1",
+          "targetNodeSchema": "n2",
+          "properties": []
+        },
+        "n2": {
+          "type": "tells_about_sentiment",
+          "sourceNodeSchema": "n2",
+          "targetNodeSchema": "n3",
+          "properties": []
+        }
+      }
+    },
+    "mappingModel": {
+      "nodeMappings": {
+        "n0": {
+          "nodeSchema": "n0",
+          "fileSchema": "dataset_analysis.csv",
+          "mappings": [
+            {
+              "field": "textID"
+            }
+          ]
+        },
+        "n1": {
+          "nodeSchema": "n1",
+          "fileSchema": "dataset_analysis.csv",
+          "mappings": [
+            {
+              "field": "text"
+            }
+          ]
+        },
+        "n2": {
+          "nodeSchema": "n2",
+          "fileSchema": "dataset_analysis.csv",
+          "mappings": [
+            {
+              "field": "selected_text"
+            }
+          ]
+        },
+        "n3": {
+          "nodeSchema": "n3",
+          "fileSchema": "dataset_analysis.csv",
+          "mappings": [
+            {
+              "field": "sentiment"
+            }
+          ]
+        }
+      },
+      "relationshipMappings": {
+        "n0": {
+          "relationshipSchema": "n0",
+          "mappings": [],
+          "sourceMappings": [
+            {
+              "field": "textID"
+            }
+          ],
+          "targetMappings": [
+            {
+              "field": "text"
+            }
+          ],
+          "fileSchema": "dataset_analysis.csv"
+        },
+        "n1": {
+          "relationshipSchema": "n1",
+          "mappings": [],
+          "sourceMappings": [
+            {
+              "field": "text"
+            }
+          ],
+          "targetMappings": [
+            {
+              "field": "selected_text"
+            }
+          ],
+          "fileSchema": "dataset_analysis.csv"
+        },
+        "n2": {
+          "relationshipSchema": "n2",
+          "mappings": [],
+          "sourceMappings": [
+            {
+              "field": "selected_text"
+            }
+          ],
+          "targetMappings": [
+            {
+              "field": "sentiment"
+            }
+          ],
+          "fileSchema": "dataset_analysis.csv"
+        }
+      }
+    }
+  }
+}
